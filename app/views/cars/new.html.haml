@@ -4,7 +4,7 @@
   = form_for(@car) do |f|
     .form-group
       = f.label 'Klasa samochodu'
-      = f.select :klasa, options_for_select([["A"], ["B"], ["C"]]), class: 'form-control'
+      = f.select :category, options_for_select([["A"], ["B"], ["C"]]), class: 'form-control'
     .form-group
       = f.label 'Marka'
       = f.text_field :name, class: 'form-control'
