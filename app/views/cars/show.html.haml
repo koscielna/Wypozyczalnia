@@ -18,6 +18,11 @@
       .form-group
         = f.submit 'Zapisz', class: 'btn btn-primary'
 
+    - if !flash[:error].nil?
+      .alert.alert-error
+        %button.close{:type => 'button', 'data-dismiss' => 'alert'} ×
+        %strong= flash[:error]
+
     - @car.reservations.each do |c|
       %h2= c.username
       %h5= c.begin_date
