@@ -8,18 +8,21 @@ class CarsController < ApplicationController
   end
 
   def create
-    car = Car.create(post_params)
+    car = Car.create(car_params)
 
     redirect_to cars_path
   end
 
   def show
     @car = Car.find(params[:id])
+
+    begin_entry = :begin_entry
+    end_entry = :end_entry
   end
 
   private
 
-    def post_params
+    def car_params
       params.require(:car).permit(:klasa, :name, :description)
     end
 

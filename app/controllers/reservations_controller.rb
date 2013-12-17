@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
   def create
     car = Car.find(params[:car_id])
-    reservation = car.reservations.create(revervation_params)
+    reservation = car.reservations.create(reservation_params)
 
     redirect_to car
   end

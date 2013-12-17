@@ -5,16 +5,16 @@
     %h5= @car.klasa
     %p= @car.description
 
-    = form_for([@car, Reservation.new]) do |f|
+    = form_for(@car) do |f|
       .form-group
         = f.label :username, 'Imię i nazwisko wypożyczającego'
         = f.text_field :username
       .form-group
         = f.label 'Data rozpoczęcia rezerwacji:'
-        = f.datetime_field :begin_date
+        = f.datetime_field :begin_entry
       .form-group
         = f.label 'Data zakońcenia rezerwacji:'
-        = f.datetime_field :end_date
+        = f.datetime_field :end_entry
       .form-group
         = f.submit 'Zapisz', class: 'btn btn-primary'
 
