@@ -1,0 +1,25 @@
+.header
+.container
+  .col-md-8
+    %h2= @car.name
+    %h5= @car.klasa
+    %p= @car.description
+
+    = form_for([@car, Reservation.new]) do |f|
+      .form-group
+        = f.label :username, 'Imię i nazwisko wypożyczającego'
+        = f.text_field :username
+      .form-group
+        = f.label 'Data rozpoczęcia rezerwacji:'
+        = f.datetime_field :begin_date
+      .form-group
+        = f.label 'Data zakońcenia rezerwacji:'
+        = f.datetime_field :end_date
+      .form-group
+        = f.submit 'Zapisz', class: 'btn btn-primary'
+
+    - @car.reservations.each do |c|
+      %h2= c.username
+      %h5= c.begin_date
+      %h5= c.end_date
+  .col-md-4

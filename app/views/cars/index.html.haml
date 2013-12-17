@@ -1,0 +1,8 @@
+.header
+.container
+  .col-md-8
+    - @cars.each do |car|
+      %h2= link_to car.name, car
+      %h5= car.klasa
+      %p= car.description
+  .col-md-4

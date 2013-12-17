@@ -1,0 +1,15 @@
+.header
+  %h3 Dodaj nowy samochód
+.container
+  = form_for(@car) do |f|
+    .form-group
+      = f.label 'Klasa samochodu'
+      = f.select :klasa, options_for_select([["A"], ["B"], ["C"]]), class: 'form-control'
+    .form-group
+      = f.label 'Marka'
+      = f.text_field :name, class: 'form-control'
+    .form-group
+      = f.label 'Opis'
+      = f.text_area :description, rows: 3, class: 'form-control'
+    .form-group
+      = f.submit 'Zapisz', class: 'btn btn-primary'
